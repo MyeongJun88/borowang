@@ -18,7 +18,7 @@ class Post(TimeStampedModel):
     image = ImageField(upload_to="img/")
     likes = ManyToManyField(User, related_name="liked_users")
 
-    def __str__(self):
+    def __str__(self):    
        return self.title
 
     def comments(self):

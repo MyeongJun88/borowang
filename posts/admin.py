@@ -1,6 +1,7 @@
 from django.contrib import admin
 from . import models
 
+
 @admin.register(models.Post)
 class ImageAdmin(admin.ModelAdmin):
     list_diaply_links = (
