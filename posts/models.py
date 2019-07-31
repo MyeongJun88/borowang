@@ -15,7 +15,7 @@ class Post(TimeStampedModel):
     title = CharField(max_length=100)
     content = TextField()
     view_count = IntegerField(default=0)
-    image = ImageField(upload_to="img/")
+    image = ImageField(upload_to="img/", null=True)
     likes = ManyToManyField(User, related_name="liked_users")
 
     def __str__(self):    
