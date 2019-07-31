@@ -20,6 +20,11 @@ def create(request):
     return redirect('home')
 
 
+def share(request, id):
+    post = get_object_or_404(Post, pk=id)
+    post.save()
+    return render(request, 'posts/share.html', {'post': post})
+
 def edit(request, id):
     post = get_object_or_404(Post, pk=id)
     if 'id' is not None:

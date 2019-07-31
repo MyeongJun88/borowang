@@ -14,7 +14,8 @@
                         {% else %}
                             <a href="{% url 'users:follow_toggle' post.user.id %}" class="btn btn-primary right">팔로우</a>
                         {% endif %}
-                    {% endif %}
+                    {% endif %}   
+                    <a href="{% url 'posts:share' post.pk %}" class="btn btn-primary right">공유하기</a>                    
                     {% if user == post.user %}
                     <a href="{% url 'posts:delete' post.pk %}" class="btn btn-primary right" style="margin-left: 15px;">삭제</a>
                     <a href="{% url 'posts:edit' post.pk %}" class="btn btn-primary right">수정</a>
@@ -25,13 +26,14 @@
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ post.title }}</h5>
+                    <h5 class="card-title">{{ post.location }}</h5>
                     {{ post.likes_count }}명이 좋아합니다.
                     {% if user in post.likes.all %}
                         <a href="{% url 'posts:like_toggle' post.id %}">좋아요 취소</a>
                     {% else %}
                         <a href="{% url 'posts:like_toggle' post.id %}">좋아요</a>
                     {% endif %}
-                
+             
                     <p class="card-text" style="margin-top: 30px;">{{ post.content }}</p>
                     <div class="starRev">
                             <span class="starR on">별1</span>
