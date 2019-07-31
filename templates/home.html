@@ -31,6 +31,7 @@
                     {% else %}
                         <a href="{% url 'posts:like_toggle' post.id %}">좋아요</a>
                     {% endif %}
+                
                     <p class="card-text" style="margin-top: 30px;">{{ post.content }}</p>
                     <div class="starRev">
                             <span class="starR on">별1</span>
